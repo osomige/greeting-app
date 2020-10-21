@@ -17,4 +17,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/comments/{greeting}/{}/{}','CalcsController@show');
+Route::get('/comments/{greeting}/{freeword}','GreetingController@free');
+Route::get('/comments/{greeting}','GreetingController@show');
+
+
+
