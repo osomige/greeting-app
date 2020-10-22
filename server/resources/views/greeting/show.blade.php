@@ -8,6 +8,6 @@
 </head>
 <body>
     <h1>{{$big}}</h1>
-<h2>{{$small}}</h2>
+    <h2>{{$small}}</h2>
 </body>
 </html>

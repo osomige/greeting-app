@@ -9,7 +9,6 @@ class GreetingController extends Controller
     public function show($greeting)
     
     {
-        $array = ['おはよう','こんにちは','こんばんは','おやすみ'];
 
         switch ($greeting) {
             case 'morning':
@@ -27,12 +26,6 @@ class GreetingController extends Controller
             case 'night':
                 $big = '夜のあいさつ';
                 $small = 'おやすみ';
-                break;
-            
-            case 'random':
-                $big = 'ランダムなメッセージ';
-                $small = $array[array_rand($array)];
-            
                 break;
             
             default:
@@ -45,37 +38,24 @@ class GreetingController extends Controller
         
     }
 
-    public function free($greeting,$freeword)
+    public function free($freeword)
     {
-        
-        switch ($greeting) {
-            case 'morning':
-                $big = '朝のあいさつ';
-                $small = 'おはようございます';
-                break;
-            case 'afternoon':
-                $big = '昼のあいさつ';
-                $small = 'こんにちは';
-                break;
-            case 'evening':
-                $big = '夕方のあいさつ';
-                $small = 'こんばんは';
-                break;
-            case 'night':
-                $big = '夜のあいさつ';
-                $small = 'おやすみ';
-                break;
-            case 'freeword':
                 $big = '自由なメッセージ';
                 $small = $freeword;
             
-            default:
-                
-    
-                break;
-            }
-
-        return view('greeting.free',['big' => $big,'small' => $small]);
-
+            
+            return view('greeting.free',['big' => $big,'small' => $small]);
     }
+
+    public function random()
+
+    {
+        $array = ['おはよう','こんにちは','こんばんは','おやすみ'];
+        $big = 'ランダムなメッセージ';
+        $small = $array[array_rand($array)];
+        return view('greeting.random',['big' => $big,'small' => $small]);
+            
+        
+    }
+
 }
