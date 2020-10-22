@@ -31,10 +31,9 @@ class GreetingController extends Controller
             default:
                 $big = '問題しかありません';
                 $small = '問題しかありません';
-    
                 break;
         }
-        return view('greeting.show',['big' => $big,'small' => $small]);
+        return view('greeting.show', ['big' => $big, 'small' => $small]);
         
     }
 
@@ -42,9 +41,7 @@ class GreetingController extends Controller
     {
                 $big = '自由なメッセージ';
                 $small = $freeword;
-            
-            
-            return view('greeting.free',['big' => $big,'small' => $small]);
+            return view('greeting.free', ['big' => $big, 'small' => $small]);
     }
 
     public function random()
@@ -53,7 +50,7 @@ class GreetingController extends Controller
         $array = ['おはよう','こんにちは','こんばんは','おやすみ'];
         $big = 'ランダムなメッセージ';
         $small = $array[array_rand($array)];
-        return view('greeting.random',['big' => $big,'small' => $small]);
+        return view('greeting.random', ['big' => $big, 'small' => $small]);
             
         
     }
